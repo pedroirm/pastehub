@@ -83,7 +83,7 @@ A arquitetura do PasteHub é baseada em microserviços com comunicação assínc
 
 O modelo de dados do PasteHub é centrado em três entidades principais: Usuários, Pastes e Categorias.
 
-![Diagrama ERD](./docs/pastehub.png)
+![Diagrama ERD](./docs/pastehub.jpg)
 
 ### Entidades Principais:
 
