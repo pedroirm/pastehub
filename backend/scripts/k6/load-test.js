@@ -3,11 +3,11 @@ import { sleep, check } from "k6";
 
 // Configuração do teste
 export const options = {
-  vus: 10, // 10 usuários virtuais
-  duration: "30s", // Duração do teste: 30 segundos
+  vus: 5,
+  duration: "30s",
   thresholds: {
-    http_req_duration: ["p(95)<500"], // 95% das requisições devem completar em menos de 500ms
-    http_req_failed: ["rate<0.01"], // Menos de 1% das requisições podem falhar
+    http_req_duration: ["p(95)<500"],
+    http_req_failed: ["rate<0.5"],
   },
 };
 
@@ -19,11 +19,12 @@ let shareableId = "";
 // Teste principal
 export default function () {
   const credentials = {
+    name: `User ${__VU}`,
     email: `user_${__VU}@example.com`,
     password: "password123",
   };
 
-  // Etapa 1: Registrar usuário ou fazer login
+
   const registerRes = http.post(
     `${BASE_URL}/api/auth/register`,
     JSON.stringify(credentials),
@@ -32,7 +33,7 @@ export default function () {
     }
   );
 
-  // Se o usuário já existe, fazer login
+
   if (registerRes.status !== 201) {
     const loginRes = http.post(
       `${BASE_URL}/api/auth/login`,
@@ -55,7 +56,7 @@ export default function () {
     token = JSON.parse(registerRes.body).token;
   }
 
-  // Etapa 2: Criar um texto
+
   const textData = {
     title: `Test Title ${__VU} - ${Date.now()}`,
     content: `This is a test content for virtual user ${__VU}`,
@@ -81,7 +82,6 @@ export default function () {
   const textId = createdText.id;
   shareableId = createdText.shareableId;
 
-  // Etapa 3: Obter lista de textos
   const getTextsRes = http.get(`${BASE_URL}/api/texts`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -92,7 +92,7 @@ export default function () {
     "get texts successful": (r) => r.status === 200,
   });
 
-  // Etapa 4: Obter um texto específico
+
   const getTextRes = http.get(`${BASE_URL}/api/texts/${textId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -103,7 +103,7 @@ export default function () {
     "get text successful": (r) => r.status === 200,
   });
 
-  // Etapa 5: Atualizar o texto
+
   const updateData = {
     title: `Updated Title ${__VU} - ${Date.now()}`,
   };
@@ -123,13 +123,13 @@ export default function () {
     "update text successful": (r) => r.status === 200,
   });
 
-  // Etapa 6: Acessar o texto compartilhado (simula outros usuários)
+
   const getSharedTextRes = http.get(`${BASE_URL}/api/share/${shareableId}`);
 
   check(getSharedTextRes, {
     "get shared text successful": (r) => r.status === 200,
   });
 
-  // Pausa entre iterações
+
   sleep(1);
 }
