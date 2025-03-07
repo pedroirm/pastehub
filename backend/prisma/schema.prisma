@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String
+  texts     Text[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Text {
+  id             String          @id @default(uuid())
+  title          String
+  content        String
+  published      Boolean         @default(false)
+  shareableId    String          @unique @default(uuid())
+  authorId       String
+  author         User            @relation(fields: [authorId], references: [id])
+  visualizations Visualization[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@map("texts")
+}
+
+model Visualization {
+  id       String   @id @default(uuid())
+  textId   String
+  text     Text     @relation(fields: [textId], references: [id])
+  viewerIp String?
+  viewedAt DateTime @default(now())
+
+  @@map("visualizations")
+}

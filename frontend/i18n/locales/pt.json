@@ -1,0 +1,78 @@
+{
+  "common": {
+    "welcome": "Bem-vindo ao PasteHub",
+    "login": "Entrar",
+    "register": "Registrar",
+    "logout": "Sair",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "create": "Criar",
+    "edit": "Editar",
+    "share": "Compartilhar",
+    "copy": "Copiar Link",
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "allRightsReserved": "Todos os direitos reservados"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Senha",
+    "confirmPassword": "Confirme sua senha",
+    "name": "Nome",
+    "createAccount": "Crie uma conta",
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "dontHaveAccount": "Ainda não tem uma conta?",
+    "loginToAccount": "Entre na sua conta",
+    "registerSuccess": "Cadastro realizado com sucesso!",
+    "loginSuccess": "Login realizado com sucesso!"
+  },
+  "dashboard": {
+    "myTexts": "Meus Textos",
+    "newText": "Novo Texto",
+    "noTexts": "Você ainda não possui textos. Crie um novo para começar!",
+    "views": "visualizações",
+    "published": "Publicado",
+    "draft": "Rascunho",
+    "updated": "Atualizado em"
+  },
+  "text": {
+    "title": "Título",
+    "content": "Conteúdo",
+    "titlePlaceholder": "Digite o título do seu texto",
+    "contentPlaceholder": "Escreva seu texto aqui...",
+    "publishText": "Publicar texto (torna o texto visível através do link compartilhável)",
+    "createText": "Criar Texto",
+    "editText": "Editar Texto",
+    "saveChanges": "Salvar Alterações",
+    "deleteConfirm": "Tem certeza de que deseja excluir este texto?",
+    "createSuccess": "Texto criado com sucesso!",
+    "updateSuccess": "Texto atualizado com sucesso!",
+    "deleteSuccess": "Texto excluído com sucesso!",
+    "requiredFields": "Título e conteúdo são obrigatórios",
+    "deleteText": "Excluir Texto",
+    "confirmDelete": "Tem certeza de que deseja excluir este texto?",
+    "textNotFound": "Texto não encontrado",
+    "textUpdated": "✨ Texto atualizado!",
+    "loadingText": "Carregando texto...",
+    "author": "Autor"
+  },
+  "home": {
+    "subtitle": "O lugar perfeito para criar, editar e compartilhar seus textos com quem quiser. Acompanhe visualizações e receba atualizações em tempo real.",
+    "getStarted": "Começar Agora",
+    "features": {
+      "create": {
+        "title": "Crie e Edite",
+        "description": "Crie textos privados e edite-os quando quiser. Tudo é salvo automaticamente."
+      },
+      "share": {
+        "title": "Compartilhe",
+        "description": "Compartilhe seus textos com links únicos para qualquer pessoa ler."
+      },
+      "monitor": {
+        "title": "Monitore",
+        "description": "Acompanhe quem está lendo seus textos com estatísticas detalhadas."
+      }
+    }
+  }
+}

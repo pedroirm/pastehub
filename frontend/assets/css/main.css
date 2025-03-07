@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.count-enter-active,
+.count-leave-active {
+  transition: all 0.3s ease;
+}
+
+.count-enter-from,
+.count-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.count-enter-to,
+.count-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Animação Fade-In */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.update-notification {
+  background-color: #34d399;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

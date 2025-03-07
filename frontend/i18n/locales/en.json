@@ -1,0 +1,78 @@
+{
+  "common": {
+    "welcome": "Welcome to PasteHub",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "create": "Create",
+    "edit": "Edit",
+    "share": "Share",
+    "copy": "Copy Link",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "allRightsReserved": "All rights reserved"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm your password",
+    "name": "Name",
+    "createAccount": "Create an account",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account yet?",
+    "loginToAccount": "Login to your account",
+    "registerSuccess": "Registration successful!",
+    "loginSuccess": "Login successful!"
+  },
+  "dashboard": {
+    "myTexts": "My Texts",
+    "newText": "New Text",
+    "noTexts": "You don't have any texts yet. Create a new one to get started!",
+    "views": "views",
+    "published": "Published",
+    "draft": "Draft",
+    "updated": "Updated on"
+  },
+  "text": {
+    "title": "Title",
+    "content": "Content",
+    "titlePlaceholder": "Enter your text title",
+    "contentPlaceholder": "Write your text here...",
+    "publishText": "Publish text (makes the text visible via shareable link)",
+    "createText": "Create Text",
+    "editText": "Edit Text",
+    "saveChanges": "Save Changes",
+    "deleteConfirm": "Are you sure you want to delete this text?",
+    "createSuccess": "Text created successfully!",
+    "updateSuccess": "Text updated successfully!",
+    "deleteSuccess": "Text deleted successfully!",
+    "requiredFields": "Title and content are required",
+    "deleteText": "Delete Text",
+    "confirmDelete": "Are you sure you want to delete this text?",
+    "textNotFound": "Text not found",
+    "textUpdated": "✨ Text updated!",
+    "loadingText": "Loading text...",
+    "author": "Author"
+  },
+  "home": {
+    "subtitle": "The perfect place to create, edit, and share your texts with anyone you want. Track views and receive real-time updates.",
+    "getStarted": "Get Started",
+    "features": {
+      "create": {
+        "title": "Create and Edit",
+        "description": "Create private texts and edit them whenever you want. Everything is saved automatically."
+      },
+      "share": {
+        "title": "Share",
+        "description": "Share your texts with unique links for anyone to read."
+      },
+      "monitor": {
+        "title": "Monitor",
+        "description": "Track who is reading your texts with detailed statistics."
+      }
+    }
+  }
+}
