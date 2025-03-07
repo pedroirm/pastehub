@@ -18,7 +18,6 @@ PasteHub é uma aplicação fullstack para criação, edição e compartilhament
 pastehub/
 │── backend/         # Código-fonte do backend (Fastify, Node.js, Prisma)
 │── frontend/        # Código-fonte do frontend (Vue.js, Nuxt)
-│── docker-compose.yml # Arquivo para subir toda a stack com Docker
 │── README.md        # Documentação do projeto
 ```
 
@@ -37,6 +36,7 @@ pastehub/
 
    ```bash
    cd backend
+   docker-compose up -d
    npm install
    cp .env.example .env
    npx prisma generate
@@ -47,7 +47,7 @@ pastehub/
 3. Rodando o Frontend:
 
    ```bash
-   cd ../frontend
+   cd frontend/
    npm install
    npm run dev
    ```
@@ -55,12 +55,6 @@ pastehub/
 4. Acesse:
    - **Frontend**: http://localhost:3001
    - **Backend**: http://localhost:3000
-
-### 🐳 Configuração com Docker (Recomendado)
-
-```bash
-docker-compose up -d
-```
 
 ## 📚 Documentação da API
 
