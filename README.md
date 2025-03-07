@@ -70,7 +70,7 @@ Acesse a documentação Swagger:
 
 A arquitetura do PasteHub é baseada em microserviços com comunicação assíncrona via RabbitMQ. O sistema utiliza Redis para cache, melhorando o desempenho de operações frequentes, e Jaeger para monitoramento distribuído.
 
-![Diagrama de Arquitetura](./docs/pastehub.drawio.png)
+![Diagrama de Arquitetura](./docs/pastehub.drawio.jpg)
 
 ### Componentes Principais:
 
