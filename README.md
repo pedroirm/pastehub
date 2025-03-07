@@ -64,7 +64,7 @@ docker-compose up -d
 
 Acesse a documentação Swagger:
 
-- http://localhost:43n
+- http://localhost:3000/documentation
 
 ## 🏗️ Diagrama da Arquitetura
 
