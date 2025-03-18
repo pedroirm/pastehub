@@ -27,8 +27,8 @@ services:
     image: rabbitmq:3-management
     hostname: rabbitmq
     ports:
-      - "5672:5672" # Porta para comunicação AMQP
-      - "15672:15672" # Porta para acessar a interface web
+      - "5672:5672"
+      - "15672:15672"
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin123
@@ -49,6 +49,20 @@ services:
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
 
+  minio:
+    image: minio/minio
+    container_name: pastehub-minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      - MINIO_ROOT_USER=admin
+      - MINIO_ROOT_PASSWORD=admin123
+    volumes:
+      - minio_data:/data
+    entrypoint: sh -c "minio server --console-address ':9001' /data & sleep 5 && mc alias set myminio http://localhost:9000 admin admin123 && mc mb myminio/pastehub-audio || true && wait"
+    networks:
+      - app-network
 networks:
   app-network:
     driver: bridge
@@ -57,3 +71,4 @@ volumes:
   postgres_data:
   redis_data:
   rabbitmq_data:
+  minio_data:

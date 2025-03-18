@@ -9,7 +9,6 @@ import {
 } from '../controllers/textController';
 
 export function textRoutes(fastify: FastifyInstance) {
-  // Rotas autenticadas - correção na tipagem
   fastify.post(
     '/api/texts',
     {

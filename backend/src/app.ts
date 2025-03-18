@@ -7,6 +7,7 @@ import { configureRedis } from './config/redis';
 import { configureSwagger } from './config/swagger';
 import { setupWebSocketService } from './services/websocketService';
 import { collectDefaultMetrics, register } from 'prom-client';
+import fastifyMultipart from '@fastify/multipart';
 collectDefaultMetrics();
 
 export async function buildApp(): Promise<FastifyInstance> {
@@ -62,7 +63,7 @@ export async function buildApp(): Promise<FastifyInstance> {
 
   await configureRedis(app);
   await configureSwagger(app);
-
+  app.register(fastifyMultipart);
   await setupWebSocketService(app);
 
   await app.register(jwt, {

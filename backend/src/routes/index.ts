@@ -3,6 +3,7 @@ import { authRoutes } from './authRoutes';
 import { textRoutes } from './textRoutes';
 // import { setupWebSocketService } from '../services/websocketService';
 import { setupAnalyticsRoutes } from '../services/analyticsService';
+import audioRoutes from './audioRoutes';
 
 declare module 'fastify' {
   interface FastifyInstance {
@@ -21,9 +22,7 @@ export function configureRoutes(fastify: FastifyInstance) {
 
   authRoutes(fastify);
   textRoutes(fastify);
-
-  // setupWebSocketService(fastify);
-
+  audioRoutes(fastify);
   setupAnalyticsRoutes(fastify);
 
   fastify.get('/health', async () => {
